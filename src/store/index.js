@@ -1,20 +1,20 @@
 import { createStore } from 'redux';
 
 const reducerFunction = (state = { counter: 0}, action) => {
-    if(action.type === 'incrementBy2') {
+    if(action.type === 'incrementBy5') {
         return {
-            counter: state.counter + 2
+            counter: state.counter + 5
         }
     }
-    else if(action.type === 'decrementBy2') {
+    else if(action.type === 'decrementBy5') {
         return {
-            counter: state.counter - 2
+            counter: state.counter - 5
         }
     } else {
-        state;
+        return state
     }
 }
 
-const centralStore = createStore();
+const centralStore = createStore(reducerFunction);
 
 export default centralStore;
